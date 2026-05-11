@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <title>Simulatore F1 - V.0.0</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header>
+    <h1>🏎️ Simulatore F1</h1>
+  </header>
+
+  <div class="container">
+
+    <!-- MENU LATERALE -->
+    <aside class="sidebar">
+      <ul class="menu">
+
+        <li class="menu-item">
+          <div class="menu-title">Scuderie ▾</div>
+          <ul class="submenu">
+            <li data-action="add-scuderia">Aggiungi</li>
+            <li data-action="edit-scuderia">Modifica</li>
+            <li data-action="delete-scuderia">Cancella</li>
+          </ul>
+        </li>
+
+        <li class="menu-item">
+          <div class="menu-title">Piloti ▾</div>
+          <ul class="submenu">
+            <li data-action="add-pilota">Aggiungi</li>
+            <li data-action="edit-pilota">Modifica</li>
+            <li data-action="delete-pilota">Cancella</li>
+          </ul>
+        </li>
+
+        <li class="menu-item">
+          <div class="menu-title">Circuiti ▾</div>
+          <ul class="submenu">
+            <li data-action="add-circuito">Aggiungi</li>
+            <li data-action="edit-circuito">Modifica</li>
+            <li data-action="delete-circuito">Cancella</li>
+          </ul>
+        </li>
+
+        <li class="menu-item">
+          <div class="menu-title">Calendario Gare ▾</div>
+          <ul class="submenu">
+            <li data-action="add-gara">Aggiungi</li>
+            <li data-action="edit-gara">Modifica</li>
+            <li data-action="delete-gara">Cancella</li>
+          </ul>
+        </li>
+        
+        <li class="menu-item">
+          <div class="menu-title">Vetture ▾</div>
+          <ul class="submenu">
+            <li data-action="add-vettura">Aggiungi</li>
+            <li data-action="edit-vettura">Modifica</li>
+            <li data-action="delete-vettura">Cancella</li>
+          </ul>
+        </li>
+              </ul>
+    </aside>
+
+    <!-- CONTENUTO -->
+    <main id="contenuto">
+      <h2>Benvenuto</h2>
+      <p>Seleziona un'azione dal menu</p>
+    </main>
+
+  </div>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
