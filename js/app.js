@@ -59,15 +59,15 @@ document.querySelectorAll(".submenu li").forEach(item => {
           break;
         
       case "add-gara":
-          contenuto.innerHTML = "<h2>Aggiungi Gara</h2>";
+          contenuto.innerHTML = "<h2>Aggiungi Evento</h2>";
           break;
               
       case "edit-gara":
-            contenuto.innerHTML = "<h2>Modifica Gara</h2>";
+            contenuto.innerHTML = "<h2>Modifica Evento</h2>";
             break;
               
       case "delete-gara":
-            contenuto.innerHTML = "<h2>Cancella Gara</h2>";
+            contenuto.innerHTML = "<h2>Cancella Evento</h2>";
             break;
        
       case "add-vettura":
