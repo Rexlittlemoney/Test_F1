@@ -669,6 +669,15 @@ function formCircuito(circuito = null) {
                 value="${circuito ? circuito.struttura : ""}"
             >
 
+            <label>Struttura2 Circuito</label>
+
+            <input
+                type="text"
+                id="struttura2Circuito"
+                value="${circuito ? circuito.struttura2 : ""}"
+            >
+    
+    
             <label>Stato Circuito</label>
 
             <select id="statoCircuito">
@@ -706,6 +715,9 @@ function formCircuito(circuito = null) {
                 struttura:
                     document.getElementById("strutturaCircuito").value,
 
+                struttura2:
+                    document.getElementById("struttura2Circuito").value,
+            
                 stato:
                     parseInt(
                         document.getElementById("statoCircuito").value
@@ -747,7 +759,8 @@ function elencoCircuiti(edit = false, del = false) {
                 <p>Lunghezza: ${circuito.lunghezza} Km</p>
 
                 <p>Struttura: ${circuito.struttura}</p>
-
+                    
+                <p>Struttura2: ${circuito.struttura2}</p>
                 ${
                     edit
                     ?
@@ -1253,13 +1266,21 @@ function formCircuito(circuito = null) {
                 value="${circuito ? circuito.lunghezza : 0}"
                 required
             >
-
+    
             <label>Struttura Circuito</label>
 
             <input
                 type="text"
                 id="strutturaCircuito"
                 value="${circuito ? circuito.struttura : ""}"
+            >
+
+            <label>Struttura2 Circuito</label>
+
+            <input
+                type="text"
+                id="struttura2Circuito"
+                value="${circuito ? circuito.struttura2 : ""}"
             >
 
             <label>Stato Circuito</label>
@@ -1306,6 +1327,10 @@ function formCircuito(circuito = null) {
 
                 struttura:
                     document.getElementById("strutturaCircuito").value,
+
+                struttura2:
+                    document.getElementById("struttura2Circuito").value,
+
 
                 stato:
                     parseInt(
@@ -1366,6 +1391,11 @@ function elencoCircuiti(edit = false, del = false) {
                     ${circuito.struttura}
                 </p>
 
+                <p>
+                    Struttura2:
+                    ${circuito.struttura2}
+                </p>
+                    
                 <p>
                     Stato:
                     ${circuito.stato === 0
