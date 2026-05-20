@@ -23,6 +23,65 @@ function generaId() {
     return Date.now() + Math.floor(Math.random() * 1000);
 }
 
+async function apriGeneratoreCircuito() {
+
+    const nomeCircuito = prompt(
+        "Inserisci il nome del circuito:"
+    );
+
+    if (!nomeCircuito) {
+        return;
+    }
+
+    try {
+
+        const circuito =
+            await generaCircuito(nomeCircuito);
+
+        mostraCircuito(circuito);
+
+    }
+    catch (errore) {
+
+        alert(
+            "Errore: " + errore.message
+        );
+
+        console.errore(errore);
+    }
+}
+
+function mostraCircuito(circuito) {
+
+    const div =
+        document.getElementById(
+            "risultatoCircuito"
+        );
+
+    div.innerHTML = `
+
+        <h2>${circuito.nome}</h2>
+
+        <p>
+            Segmenti:
+            ${circuito.segmenti}
+        </p>
+
+        <h3>Layout</h3>
+
+        <textarea rows="5" cols="80">
+${circuito.layout}
+        </textarea>
+
+        <h3>Larghezza</h3>
+
+        <textarea rows="5" cols="80">
+${circuito.larghezza}
+        </textarea>
+
+    `;
+}
+
 const contenuto = document.getElementById("contenuto");
 
 // GESTIONE APERTURA MENU
@@ -42,78 +101,6 @@ document.querySelectorAll(".menu-title").forEach(title => {
 });
 
 
-// GESTIONE CLICK AZIONI
-document.querySelectorAll(".submenu li").forEach(item => {
-  item.addEventListener("click", () => {
-    const action = item.dataset.action;
-    const contenuto = document.getElementById("contenuto");
-
-    switch (action) {
-      case "add-scuderia":
-        contenuto.innerHTML = "<h2>Aggiungi Scuderia</h2>";
-        break;
-
-      case "edit-scuderia":
-        contenuto.innerHTML = "<h2>Modifica Scuderia</h2>";
-        break;
-
-      case "delete-scuderia":
-        contenuto.innerHTML = "<h2>Cancella Scuderia</h2>";
-        break;
-
-      case "add-pilota":
-        contenuto.innerHTML = "<h2>Aggiungi Pilota</h2>";
-        break;
-
-      case "edit-pilota":
-        contenuto.innerHTML = "<h2>Modifica Pilota</h2>";
-        break;
-
-      case "delete-pilota":
-        contenuto.innerHTML = "<h2>Cancella Pilota</h2>";
-        break;
-
-      case "add-circuito":
-        contenuto.innerHTML = "<h2>Aggiungi Circuito</h2>";
-        break;
-            
-      case "edit-circuito":
-          contenuto.innerHTML = "<h2>Modifica Circuito</h2>";
-          break;
-            
-      case "delete-circuito":
-          contenuto.innerHTML = "<h2>Cancella Circuito</h2>";
-          break;
-        
-      case "add-gara":
-          contenuto.innerHTML = "<h2>Aggiungi Evento</h2>";
-          break;
-              
-      case "edit-gara":
-            contenuto.innerHTML = "<h2>Modifica Evento</h2>";
-            break;
-              
-      case "delete-gara":
-            contenuto.innerHTML = "<h2>Cancella Evento</h2>";
-            break;
-       
-      case "add-vettura":
-            contenuto.innerHTML = "<h2>Aggiungi Vettura</h2>";
-            break;
-                
-      case "edit-vettura":
-              contenuto.innerHTML = "<h2>Modifica Vettura</h2>";
-              break;
-                
-      case "delete-vettura":
-              contenuto.innerHTML = "<h2>Cancella Vettura</h2>";
-              break;
-        
-        default:
-        contenuto.innerHTML = "<h2>Azione non riconosciuta</h2>";
-    }
-  });
-});
 
 /********************************
  EVENTI MENU
@@ -123,6 +110,8 @@ document.querySelectorAll(".submenu li").forEach(item => {
 
     item.addEventListener("click", () => {
 
+        console.log("CLICK MENU");
+        console.log(item.dataset.action);
         const action = item.dataset.action;
 
         switch(action) {
@@ -166,7 +155,11 @@ document.querySelectorAll(".submenu li").forEach(item => {
                     elencoCircuiti(false, true);
                     break;
 
-
+                case "cerca-info-circuito":
+                    console.log("passo");
+                    apriGeneratoreCircuito();
+                    break;
+                
                 // EVENTI
                 case "add-evento":
                     formEvento();

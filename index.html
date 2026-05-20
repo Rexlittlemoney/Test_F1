@@ -12,7 +12,11 @@
   </header>
 
   <div class="container">
+  
+  <div id="contenuto"></div>
 
+  <div id="risultatoCircuito"></div>
+  
     <!-- MENU LATERALE -->
     <aside class="sidebar">
       <ul class="menu">
@@ -41,6 +45,7 @@
             <li data-action="add-circuito">Aggiungi</li>
             <li data-action="edit-circuito">Modifica</li>
             <li data-action="delete-circuito">Cancella</li>
+            <li data-action="cerca-info-circuito">Cerca Info Circuito</li>
           </ul>
         </li>
 
@@ -61,7 +66,6 @@
             <li data-action="delete-vettura">Cancella</li>
           </ul>
         </li>
-              </ul>
     </aside>
 
     <!-- CONTENUTO -->
@@ -72,6 +76,10 @@
 
   </div>
 
-  <script src="js/app.js"></script>
+  
+  <script src="./js/geometry.js"></script>
+  <script src="./js/circuitGenerator.js"></script>
+  <script src="./js/app.js"></script>
+ 
 </body>
 </html>
